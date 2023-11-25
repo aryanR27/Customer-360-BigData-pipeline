@@ -12,6 +12,7 @@ The primary objective of this pipeline is to ensure that the order file is made 
 
 1. **Data Ingestion:**
    - The order file is expected to be available in the specified S3 bucket every day.
+   - Make sure to setup the bucket policy for making it publicly accessible. You can use the policy generator.
 
 2. **Data Processing:**
    - The data is fetched from the S3 bucket to the edge node for processing.
