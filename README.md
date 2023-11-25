@@ -8,7 +8,7 @@ Customer 360 Airflow is a data processing pipeline that aims to provide a compre
 
 The primary objective of this pipeline is to ensure that the order file is made available in the S3 bucket every day at a specific time. The customer-related information is stored in a MySQL database. The workflow involves bringing the order file to the edge node, processing it, creating a Hive table, and performing a join operation with the customer table from MySQL. The final result is then dumped into HBase for further analysis and reporting.
 
-##Dependencies
+## Dependencies
 - Apache Airflow
 - Apache Hive
 - Apache HBase
