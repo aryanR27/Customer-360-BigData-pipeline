@@ -8,12 +8,12 @@ Customer 360 Airflow is a data processing pipeline that aims to provide a compre
 
 The primary objective of this pipeline is to ensure that the order file is made available in the S3 bucket every day at a specific time. The customer-related information is stored in a MySQL database. The workflow involves bringing the order file to the edge node, processing it, creating a Hive table, and performing a join operation with the customer table from MySQL. The final result is then dumped into HBase for further analysis and reporting.
 
-## Dependencies
+## Prerequisites
 - Apache Airflow
 - Apache Hive
 - Apache HBase
 - MySQL
-- S3
+- Amazon S3
   
 ## Workflow
 
@@ -46,6 +46,17 @@ Ensure that the necessary configurations are set in the Airflow DAG file:
 - S3 Bucket details for order file ingestion.
 - MySQL database connection details.
 - Hive and HBase configurations.
+- Place the jar file on the hdfs.
+
+## Usage
+
+- Create dags folder inside airflow
+- Place the python file inside dags folder.
+- airflow webserver -p 8080 for starting the airflow web server.
+- Open another terminal and start the airflow scheduler — airflow scheduler
+- Access the Airflow UI at http://localhost:8080.
+- Navigate to the "DAGs" section and find the "customer_360_dag" DAG.
+- Trigger the DAG manually.
 
 ## Review
-I personally use the bash operator for connecting to the machine but it can be done in more concise way via SSH Operator. But my VM having some libraries missing for SSH OPerator and having dependencies on other.
+I personally use the bash operator for connecting to the machine but it can be done in more concise way via SSH Operator with connection setup in airflow. But my VM having some required libraries missing for SSH Operator and having dependencies on other.
