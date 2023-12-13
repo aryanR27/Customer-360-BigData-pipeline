@@ -20,6 +20,8 @@ The primary objective of this pipeline is to ensure that the order file is made 
 1. **Data Ingestion:**
    - The order file is expected to be available in the specified S3 bucket every day.
    - Make sure to setup the bucket policy for making it publicly accessible. You can use the policy generator.
+     ![s3](https://github.com/aryanR27/Customer-360-BigData-pipeline/assets/60980375/901d3032-8448-4e25-9ab8-c5378b640957)
+
 
 2. **Data Processing:**
    - The data is fetched from the S3 bucket to the edge node for processing.
